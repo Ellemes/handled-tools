@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "authors": ["NinjaPhenix"],
+  "environment": "*",
+  "entrypoints": {
+    "main": ["ninjaphenix.handled_tools.Main"]
+  },
+  "id": "handled_tools",
+  "version": "${version}"
+}
