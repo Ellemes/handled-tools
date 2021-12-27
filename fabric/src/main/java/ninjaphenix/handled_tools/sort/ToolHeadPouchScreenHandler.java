@@ -15,6 +15,7 @@ public class ToolHeadPouchScreenHandler extends ScreenHandler {
     public ToolHeadPouchScreenHandler(ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, Inventory inventory) {
         super(type, syncId);
         this.inventory = inventory;
+        inventory.onOpen(playerInventory.player);
         for (int i = 0; i < 5; i++) {
             this.addSlot(new FilteredSlot(inventory, i, 44 + i * 18, 20, stack -> stack.getItem() instanceof ToolHead));
         }
@@ -54,5 +55,11 @@ public class ToolHeadPouchScreenHandler extends ScreenHandler {
             }
         }
         return originalStack;
+    }
+
+    @Override
+    public void close(PlayerEntity player) {
+        super.close(player);
+        inventory.onClose(player);
     }
 }

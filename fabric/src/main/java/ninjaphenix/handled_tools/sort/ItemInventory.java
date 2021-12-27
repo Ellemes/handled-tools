@@ -72,4 +72,9 @@ public class ItemInventory implements Inventory {
     public void clear() {
         items.clear();
     }
+
+    @Override
+    public void onClose(PlayerEntity player) {
+        this.markDirty();
+    }
 }
