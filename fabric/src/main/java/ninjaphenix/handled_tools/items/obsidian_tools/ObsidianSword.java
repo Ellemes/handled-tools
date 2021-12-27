@@ -1,4 +1,4 @@
-package ninjaphenix.handled_tools.items;
+package ninjaphenix.handled_tools.items.obsidian_tools;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;

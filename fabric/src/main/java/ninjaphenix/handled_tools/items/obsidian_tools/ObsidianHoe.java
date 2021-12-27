@@ -1,16 +1,16 @@
-package ninjaphenix.handled_tools.items;
+package ninjaphenix.handled_tools.items.obsidian_tools;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import ninjaphenix.handled_tools.Utils;
 
-public class ObsidianPickaxe extends PickaxeItem {
-    public ObsidianPickaxe(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+public class ObsidianHoe extends HoeItem {
+    public ObsidianHoe(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
 

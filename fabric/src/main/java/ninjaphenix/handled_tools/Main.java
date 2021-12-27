@@ -15,11 +15,11 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.registry.Registry;
 import ninjaphenix.handled_tools.client.ToolHeadPouchScreen;
-import ninjaphenix.handled_tools.items.ObsidianAxe;
-import ninjaphenix.handled_tools.items.ObsidianHoe;
-import ninjaphenix.handled_tools.items.ObsidianPickaxe;
-import ninjaphenix.handled_tools.items.ObsidianShovel;
-import ninjaphenix.handled_tools.items.ObsidianSword;
+import ninjaphenix.handled_tools.items.obsidian_tools.ObsidianAxe;
+import ninjaphenix.handled_tools.items.obsidian_tools.ObsidianHoe;
+import ninjaphenix.handled_tools.items.obsidian_tools.ObsidianPickaxe;
+import ninjaphenix.handled_tools.items.obsidian_tools.ObsidianShovel;
+import ninjaphenix.handled_tools.items.obsidian_tools.ObsidianSword;
 import ninjaphenix.handled_tools.items.ToolHeadPouch;
 import ninjaphenix.handled_tools.sort.ToolHeadPouchScreenHandler;
 
