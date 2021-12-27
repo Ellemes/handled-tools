@@ -38,7 +38,7 @@ public class Main implements ModInitializer {
     }
 
     private void registerToolHeadPouch() {
-        Registry.register(Registry.ITEM, Utils.id("tool_head_pouch"), new ToolHeadPouch(new Item.Settings().group(ItemGroup.TOOLS)));
+        Registry.register(Registry.ITEM, Utils.id("tool_head_pouch"), new ToolHeadPouch(new Item.Settings().group(ItemGroup.TOOLS).maxCount(1)));
         toolHeadPouchScreenHandlerType = ScreenHandlerRegistry.registerSimple(Utils.id("tool_head_pouch"), (syncId, inventory) -> {
             return new ToolHeadPouchScreenHandler(toolHeadPouchScreenHandlerType, syncId, inventory, new SimpleInventory(5));
         });
