@@ -23,5 +23,6 @@ public class BlockStateProvider extends FabricBlockStateDefinitionProvider {
         generator.register(ModItems.OBSIDIAN_PICKAXE, Models.GENERATED);
         generator.register(ModItems.OBSIDIAN_AXE, Models.GENERATED);
         generator.register(ModItems.OBSIDIAN_HOE, Models.GENERATED);
+        generator.register(ModItems.TOOL_HEAD_POUCH, Models.GENERATED);
     }
 }

@@ -11,6 +11,8 @@ public class ModItems {
     public static final Item OBSIDIAN_AXE = item("obsidian_axe");
     public static final Item OBSIDIAN_HOE = item("obsidian_hoe");
 
+    public static final Item TOOL_HEAD_POUCH = item("tool_head_pouch");
+
     private static Item item(String path) {
         return Registry.ITEM.get(Utils.id(path));
     }
