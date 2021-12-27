@@ -3,7 +3,8 @@
   "authors": ["NinjaPhenix"],
   "environment": "*",
   "entrypoints": {
-    "main": ["ninjaphenix.handled_tools.Main"]
+    "main": ["ninjaphenix.handled_tools.Main"],
+    "fabric-datagen": ["ninjaphenix.handled_tools.data.Main"]
   },
   "id": "handled_tools",
   "version": "${version}"
