@@ -25,12 +25,11 @@ import ninjaphenix.handled_tools.sort.ToolHeadPouchScreenHandler;
 
 public class Main implements ModInitializer {
     public static final Main INSTANCE = new Main();
+    private ScreenHandlerType<ToolHeadPouchScreenHandler> toolHeadPouchScreenHandlerType;
 
     private Main() {
 
     }
-
-    private ScreenHandlerType<ToolHeadPouchScreenHandler> toolHeadPouchScreenHandlerType;
 
     @Override
     public void onInitialize() {
@@ -40,7 +39,6 @@ public class Main implements ModInitializer {
 
     private void registerToolHeadPouch() {
         Registry.register(Registry.ITEM, Utils.id("tool_head_pouch"), new ToolHeadPouch(new Item.Settings().group(ItemGroup.TOOLS)));
-
         toolHeadPouchScreenHandlerType = ScreenHandlerRegistry.registerSimple(Utils.id("tool_head_pouch"), (syncId, inventory) -> {
             return new ToolHeadPouchScreenHandler(toolHeadPouchScreenHandlerType, syncId, inventory, new SimpleInventory(5));
         });
@@ -81,7 +79,6 @@ public class Main implements ModInitializer {
                 return Ingredient.ofItems(Items.OBSIDIAN, Items.CRYING_OBSIDIAN);
             }
         };
-
         Registry.register(Registry.ITEM, Utils.id("obsidian_sword"), new ObsidianSword(obsidianToolMaterial, 3, -2.4f, new Item.Settings().group(ItemGroup.COMBAT)));
         Registry.register(Registry.ITEM, Utils.id("obsidian_shovel"), new ObsidianShovel(obsidianToolMaterial, 1.5f, -3, new Item.Settings().group(ItemGroup.TOOLS)));
         Registry.register(Registry.ITEM, Utils.id("obsidian_pickaxe"), new ObsidianPickaxe(obsidianToolMaterial, 1, -2, new Item.Settings().group(ItemGroup.TOOLS)));

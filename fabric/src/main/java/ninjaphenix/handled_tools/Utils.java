@@ -34,7 +34,6 @@ public class Utils {
             }
             stack.damage(damage, miner, (entity) -> entity.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         }
-
         return true;
     }
 }

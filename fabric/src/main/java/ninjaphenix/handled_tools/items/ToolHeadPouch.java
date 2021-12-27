@@ -2,7 +2,6 @@ package ninjaphenix.handled_tools.items;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
@@ -12,6 +11,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import ninjaphenix.handled_tools.Main;
+import ninjaphenix.handled_tools.sort.ItemInventory;
 import ninjaphenix.handled_tools.sort.ToolHeadPouchScreenHandler;
 
 public class ToolHeadPouch extends Item {
@@ -21,11 +21,12 @@ public class ToolHeadPouch extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        ItemStack stack = user.getStackInHand(hand);
         if (!world.isClient()) {
             user.openHandledScreen(new NamedScreenHandlerFactory() {
                 @Override
                 public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-                    return new ToolHeadPouchScreenHandler(Main.INSTANCE.getToolHeadPouchScreenHandlerType(), syncId, inv, new SimpleInventory(5));
+                    return new ToolHeadPouchScreenHandler(Main.INSTANCE.getToolHeadPouchScreenHandlerType(), syncId, inv, new ItemInventory(stack, 5));
                 }
 
                 @Override
@@ -34,6 +35,6 @@ public class ToolHeadPouch extends Item {
                 }
             });
         }
-        return TypedActionResult.success(user.getStackInHand(hand));
+        return TypedActionResult.success(stack);
     }
 }

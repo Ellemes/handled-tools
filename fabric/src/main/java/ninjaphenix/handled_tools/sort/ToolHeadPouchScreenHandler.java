@@ -14,18 +14,15 @@ public class ToolHeadPouchScreenHandler extends ScreenHandler {
 
     public ToolHeadPouchScreenHandler(ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, Inventory inventory) {
         super(type, syncId);
-
         this.inventory = inventory;
         for (int i = 0; i < 5; i++) {
             this.addSlot(new FilteredSlot(inventory, i, 44 + i * 18, 20, stack -> stack.getItem() instanceof ToolHead));
         }
-
         for (int y = 0; y < 3; y++) {
             for (int x = 0; x < 9; x++) {
                 this.addSlot(new Slot(playerInventory, x + y * 9 + 9, 8 + x * 18, y * 18 + 51));
             }
         }
-
         for (int x = 0; x < 9; x++) {
             this.addSlot(new Slot(playerInventory, x, 8 + x * 18, 109));
         }
