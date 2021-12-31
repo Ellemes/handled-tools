@@ -10,9 +10,10 @@ fun isFabricProject(name: String): Boolean {
     return "fabric" in name
 }
 
+val javaVersion = JavaVersion.VERSION_17
+val jetbrainsAnnotationsVersion = "23.0.0"
 val minecraftVersion = "1.18.1"
 val yarnVersion = "12"
-val jetbrainsAnnotationsVersion = "23.0.0"
 
 subprojects {
     apply(plugin = "java-library")
@@ -27,7 +28,6 @@ subprojects {
     buildDir = rootDir.resolve("build/${project.name}")
 
     project.extensions.getByType(JavaPluginExtension::class).apply {
-        val javaVersion = JavaVersion.VERSION_17
         sourceCompatibility = javaVersion
         targetCompatibility = javaVersion
     }
