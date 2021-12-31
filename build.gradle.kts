@@ -2,12 +2,12 @@ plugins {
     id("fabric-loom").version("0.10.65").apply(false)
 }
 
-fun isMainSubProject(name: String): Boolean {
-    return name == "fabric" || name == "forge"
+fun isMainSubProject(it: Project): Boolean {
+    return it.name == "fabric" || it.name == "forge"
 }
 
-fun isFabricProject(name: String): Boolean {
-    return "fabric" in name
+fun isFabricProject(it: Project): Boolean {
+    return "fabric" in it.name
 }
 
 val javaVersion = JavaVersion.VERSION_17
@@ -40,10 +40,10 @@ subprojects {
         add("implementation", "org.jetbrains:annotations:${jetbrainsAnnotationsVersion}")
     }
 
-    if (isFabricProject(project.name)) {
+    if (isFabricProject(project)) {
         apply(plugin = "fabric-loom")
 
-        if (isMainSubProject(project.name)) {
+        if (isMainSubProject(project)) {
             javaPluginExtension.sourceSets {
                 named("main") {
                     resources {
@@ -80,7 +80,7 @@ subprojects {
                     serverWithGui()
                 }
 
-                if (isMainSubProject(project.name)) {
+                if (isMainSubProject(project)) {
                     create("datagen") {
                         client()
                         vmArg("-Dfabric-api.datagen")
@@ -114,7 +114,7 @@ subprojects {
 
 tasks.register("buildMod") {
     subprojects.forEach {
-        if (isMainSubProject(it.name)) {
+        if (isMainSubProject(it)) {
             dependsOn(it.tasks["build"])
         }
     }
