@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import ninjaphenix.handled_tools.Utils;
 
-public class ObsidianPickaxe extends PickaxeItem {
+public final class ObsidianPickaxe extends PickaxeItem {
     public ObsidianPickaxe(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }

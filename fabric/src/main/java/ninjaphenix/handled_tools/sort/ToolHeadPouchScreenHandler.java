@@ -9,7 +9,7 @@ import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
 import ninjaphenix.handled_tools.items.ToolHead;
 
-public class ToolHeadPouchScreenHandler extends ScreenHandler {
+public final class ToolHeadPouchScreenHandler extends ScreenHandler {
     private final Inventory inventory;
 
     public ToolHeadPouchScreenHandler(ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, Inventory inventory) {

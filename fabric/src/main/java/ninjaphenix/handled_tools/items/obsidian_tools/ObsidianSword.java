@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import ninjaphenix.handled_tools.Utils;
 
-public class ObsidianSword extends SwordItem {
+public final class ObsidianSword extends SwordItem {
     public ObsidianSword(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }

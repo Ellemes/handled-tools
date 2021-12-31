@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import ninjaphenix.handled_tools.Utils;
 
-public class ObsidianHoe extends HoeItem {
+public final class ObsidianHoe extends HoeItem {
     public ObsidianHoe(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }

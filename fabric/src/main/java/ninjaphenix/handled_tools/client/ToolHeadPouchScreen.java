@@ -9,7 +9,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import ninjaphenix.handled_tools.sort.ToolHeadPouchScreenHandler;
 
-public class ToolHeadPouchScreen extends HandledScreen<ToolHeadPouchScreenHandler> {
+public final class ToolHeadPouchScreen extends HandledScreen<ToolHeadPouchScreenHandler> {
     private static final Identifier TEXTURE = new Identifier("textures/gui/container/hopper.png");
 
     public ToolHeadPouchScreen(ToolHeadPouchScreenHandler handler, PlayerInventory inventory, Text title) {

@@ -11,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-public class Utils {
+public final class Utils {
     public static final String MOD_ID = "handled_tools";
 
     public static Identifier id(String path) {
@@ -35,5 +35,9 @@ public class Utils {
             stack.damage(damage, miner, (entity) -> entity.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         }
         return true;
+    }
+
+    private Utils() {
+        throw new IllegalStateException("Utility class should not be instantiated.");
     }
 }

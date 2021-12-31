@@ -6,7 +6,7 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 
-public class ItemInventory implements Inventory {
+public final class ItemInventory implements Inventory {
     private final ItemStack stack;
     private final int inventorySize;
     private final DefaultedList<ItemStack> items;

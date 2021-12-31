@@ -6,7 +6,7 @@ import net.minecraft.screen.slot.Slot;
 
 import java.util.function.Predicate;
 
-public class FilteredSlot extends Slot {
+public final class FilteredSlot extends Slot {
     private final Predicate<ItemStack> canInsertStack;
 
     public FilteredSlot(Inventory inventory, int index, int x, int y, Predicate<ItemStack> canInsertStack) {

@@ -14,7 +14,7 @@ import ninjaphenix.handled_tools.Main;
 import ninjaphenix.handled_tools.sort.ItemInventory;
 import ninjaphenix.handled_tools.sort.ToolHeadPouchScreenHandler;
 
-public class ToolHeadPouch extends Item {
+public final class ToolHeadPouch extends Item {
     public ToolHeadPouch(Settings settings) {
         super(settings);
     }

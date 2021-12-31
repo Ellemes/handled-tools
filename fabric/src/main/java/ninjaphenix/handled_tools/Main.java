@@ -23,7 +23,7 @@ import ninjaphenix.handled_tools.items.obsidian_tools.ObsidianSword;
 import ninjaphenix.handled_tools.items.ToolHeadPouch;
 import ninjaphenix.handled_tools.sort.ToolHeadPouchScreenHandler;
 
-public class Main implements ModInitializer {
+public final class Main implements ModInitializer {
     public static final Main INSTANCE = new Main();
     private ScreenHandlerType<ToolHeadPouchScreenHandler> toolHeadPouchScreenHandlerType;
 

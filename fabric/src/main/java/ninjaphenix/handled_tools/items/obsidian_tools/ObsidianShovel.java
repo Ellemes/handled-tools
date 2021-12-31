@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import ninjaphenix.handled_tools.Utils;
 
-public class ObsidianShovel extends ShovelItem {
+public final class ObsidianShovel extends ShovelItem {
     public ObsidianShovel(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
