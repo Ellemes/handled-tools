@@ -90,7 +90,7 @@ subprojects {
                 useLegacyMixinAp.set(false)
             }
 
-            project.findProperty("access_widener_path").also {
+            project.findProperty("access_widener_path")?.also {
                 accessWidenerPath.set(file("${it}"))
             }
         }
