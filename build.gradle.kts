@@ -2,13 +2,9 @@ plugins {
     id("fabric-loom").version("0.10.65").apply(false)
 }
 
-fun isMainSubProject(it: Project): Boolean {
-    return it.name == "fabric" || it.name == "forge"
-}
+fun isMainSubProject(it: Project) = it.name == "fabric" || it.name == "forge"
 
-fun isFabricProject(it: Project): Boolean {
-    return "fabric" in it.name
-}
+fun isFabricProject(it: Project) = "fabric" in it.name
 
 val javaVersion = JavaVersion.VERSION_17
 val jetbrainsAnnotationsVersion = "23.0.0"
@@ -23,7 +19,7 @@ subprojects {
     group = "ninjaphenix"
     version = "${properties["mod_version"]}+${minecraftVersion}"
     project.extensions.getByType(BasePluginExtension::class).apply {
-        archivesName.set(properties["archives_base_name"] as String)
+        archivesName.set("${properties["archives_base_name"]}")
     }
     buildDir = rootDir.resolve("build/${project.name}")
 
@@ -68,9 +64,7 @@ subprojects {
             add("modImplementation", "net.fabricmc.fabric-api:fabric-api:${properties["fabric_api_version"]}")
         }
 
-        val loomExtension = project.extensions.getByType(net.fabricmc.loom.api.LoomGradleExtensionAPI::class)
-
-        loomExtension.apply {
+        project.extensions.getByType(net.fabricmc.loom.api.LoomGradleExtensionAPI::class).apply {
             runs {
                 named("client") {
                     ideConfigGenerated(false)
@@ -96,8 +90,8 @@ subprojects {
                 useLegacyMixinAp.set(false)
             }
 
-            if (project.hasProperty("access_widener_path")) {
-                accessWidenerPath.set(file(properties["access_widener_path"] as String))
+            project.findProperty("access_widener_path").also {
+                accessWidenerPath.set(file("${it}"))
             }
         }
 
@@ -117,6 +111,14 @@ tasks.register("buildMod") {
         if (isMainSubProject(it)) {
             dependsOn(it.tasks["build"])
         }
+    }
+}
+
+tasks.register("sample") {
+    println("Running sample code:")
+    subprojects.forEach {
+        println(it.name)
+        println(isMainSubProject(it))
     }
 }
 
